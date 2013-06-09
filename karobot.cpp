@@ -1,7 +1,10 @@
 #include<karobot.h>
-#include<Arduino.h>//**********************
+#include<Arduino.h>
+
+//**********************
 //**********************
 //motor stop function
+//**********************
 //**********************
 void motorStop(char M[])
 {
@@ -29,19 +32,16 @@ void motorStop(char M[])
 //***********************
 //motor backward function
 //***********************
+//***********************
 void motorBackward(char M[])
 {
   if(strcmp(M,"leftMotor")==0)
   {
-//    digitalWrite(rightMotor1,LOW);
-//    digitalWrite(rightMotor2,LOW);
     digitalWrite(leftMotor1,LOW);
     digitalWrite(leftMotor2,HIGH);
   }
   if(strcmp(M,"rightMotor")==0)
   {
-//    digitalWrite(leftMotor1,LOW);
-//    digitalWrite(leftMotor2,LOW);
     digitalWrite(rightMotor1,LOW);
     digitalWrite(rightMotor2,HIGH);    
   }
@@ -59,19 +59,16 @@ void motorBackward(char M[])
 //**********************
 //motor forward function
 //**********************
+//***********************
 void motorForward(char M[])
 {
   if(strcmp(M,"leftMotor")==0)
-  {
-//    digitalWrite(rightMotor1,LOW);
-//    digitalWrite(rightMotor2,LOW);  
+  { 
     digitalWrite(leftMotor1,HIGH);
     digitalWrite(leftMotor2,LOW);
   }
   if(strcmp(M,"rightMotor")==0)
   {
-//    digitalWrite(leftMotor1,LOW);
-//    digitalWrite(leftMotor2,LOW);
     digitalWrite(rightMotor1,HIGH);
     digitalWrite(rightMotor2,LOW);    
   }
@@ -85,21 +82,17 @@ void motorForward(char M[])
 }
 
 
-//******************************************************
-//mandira part
 //**************************
 //**************************
 //robot go forward function
 //**************************
 //**************************
-void goforward()
+void goForward()
 {
-  motorForward("leftMotor");
-  motorForward("rightMotor");
-  //digitalWrite(leftMotor2,LOW);
-  //digitalWrite(leftMotor1,HIGH);
-  //digitalWrite(rightMotor1,HIGH);
-  //digitalWrite(rightMotor2,LOW);
+  digitalWrite(leftMotor2,LOW);
+  digitalWrite(leftMotor1,HIGH);
+  digitalWrite(rightMotor1,HIGH);
+  digitalWrite(rightMotor2,LOW);
 }
 
 //**************************
@@ -107,10 +100,8 @@ void goforward()
 //robot turnleft function
 //**************************
 //**************************
-void leftturn()
+void leftTurn()
 {
-  //motorStop("leftMotor");
-  //motorForward("rightMotor);
   digitalWrite(leftMotor1,LOW);
   digitalWrite(leftMotor2,LOW);
   digitalWrite(rightMotor1,HIGH);
@@ -122,7 +113,7 @@ void leftturn()
 //robot turnright function
 //**************************
 //**************************
-void rightturn()
+void rightTurn()
 {
   digitalWrite(leftMotor1,HIGH);
   digitalWrite(leftMotor2,LOW);
@@ -130,7 +121,6 @@ void rightturn()
   digitalWrite(rightMotor2,LOW);
 }
 
-//if(isONline(sensor1) && isONline(sensor2)
 //***************************
 //***************************
 //is on line or not function
@@ -142,7 +132,11 @@ int isONline(int sensor_id)
   return((digitalRead(sensor_id))==sensor_op);
 }
 
-void robot_begin()
+//*****************************
+//*****************************
+//initialize 
+
+void roboBegin()
 {
   pinMode(leftMotor1,OUTPUT);
   pinMode(leftMotor2,OUTPUT);
@@ -157,3 +151,14 @@ void robot_begin()
   digitalWrite(enableR,HIGH);
 
 }
+
+
+
+laptop for each team
+one teachers from each school
+selected students should come at place n time we ask
+call 24 students at karkhana with teacher comming thrusday
+
+
+monday samman ma students ko name haru chaiyo
+sunday new summit ma Qs.
